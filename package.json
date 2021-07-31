@@ -1,0 +1,16 @@
+{
+  "name": "bliss-template",
+  "version": "1.0.0",
+  "description": "A blissful blog that doesn't take eons to build, deploy, or learn",
+  "main": "error.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "AJ ONeal <coolaj86@gmail.com> (https://coolaj86.com/)",
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "@ryanburnette/hash-assets": "^1.1.1",
+    "@ryanburnette/html-remove-empty-lines": "^1.1.6",
+    "prettier": "^2.3.2"
+  }
+}

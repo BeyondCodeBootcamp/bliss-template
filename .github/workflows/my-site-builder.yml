@@ -1,0 +1,31 @@
+# Simplified Docs at https://github.com/coolaj86/explore-github-actions/
+name: Build GitHub Pages
+on: [push]
+jobs:
+    Build-GitHub-Pages:
+        runs-on: ubuntu-20.04
+        env:
+          GH_PAGES_AUTH: "x-access-token:${{ github.token }}"
+        steps:
+            - run: echo "${{ github.event_name }} triggered ${{ github.repository }}#${{ github.ref }} to build on ${{ runner.os }} from ${{ github.workspace }} (cwd)"
+            - name: Check out repository code
+              uses: actions/checkout@v2
+              with:
+                #ref: main
+                submodules: recursive
+            - name: "Webi: Install 'node' and 'hugo', and update PATH"
+              run: |
+                curl -sS https://webinstall.dev/hugo | bash
+                curl -sS https://webinstall.dev/node@16 | bash
+                echo "${HOME}/.local/opt/node/bin" >> $GITHUB_PATH
+            - run: hugo version
+            - run: node --version
+            - name: Add Git User
+              run: |
+                git config --global user.name 'Github Actions'
+                git config --global user.email 'github-actions@users.noreply.github.com'
+            - name: Build
+              run: bash ./scripts/build.sh
+            - name: Deploy
+              run: bash ./scripts/deploy.sh
+            - run: echo "Status ${{ job.status }}."

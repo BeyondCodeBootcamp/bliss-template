@@ -1,0 +1,24 @@
+title: "John Doe"
+theme: "eon"
+baseURL: 'https://coolaj86.github.io/bliss-demo-template'
+# for multiple authors, see
+# https://discourse.gohugo.io/t/site-author-usage/31459/8?u=coolaj86
+Author:
+  name: "John Doe"
+  email: "john.doe@example.com"
+copyright: "© John Doe"
+languageCode: "en-us"
+
+Params:
+  gravatar: true
+  show_edit: "Suggest Edit"
+  git_repo: "https://github.com/YOUR_USER/YOUR_BLOG_REPO"
+  git_branch: "main"
+  git_host: "github"
+
+markup:
+  goldmark:
+    renderer:
+    # unsafe allows use of HTML and JavaScript in your Markdown
+    # disable if your blog allows posts from untrusted authors
+    unsafe: true
