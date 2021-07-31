@@ -1,0 +1,3 @@
+[submodule "themes/eon"]
+	path = themes/eon
+	url = https://github.com/ryanburnette/eon
