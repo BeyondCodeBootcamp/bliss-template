@@ -1,20 +1,25 @@
-title: "John Doe"
+title: "<name>"
 theme: "eon"
-baseURL: 'https://coolaj86.github.io/bliss-demo-template'
+baseURL: "https://<owner>.github.io/<repo>"
+#baseURL: 'http://localhost:8801'
 # for multiple authors, see
 # https://discourse.gohugo.io/t/site-author-usage/31459/8?u=coolaj86
 Author:
-  name: "John Doe"
-  email: "john.doe@example.com"
-copyright: "© John Doe"
+  name: "<name>"
+  email: "<email>"
+copyright: "© <name>"
 languageCode: "en-us"
 
 Params:
   gravatar: true
   show_edit: "Suggest Edit"
-  git_repo: "https://github.com/YOUR_USER/YOUR_BLOG_REPO"
-  git_branch: "main"
+  git_repo: "https://github.com/<owner>/<repo>"
+  git_branch: "<branch>"
   git_host: "github"
+  utterences_repo: "<owner>/<repo>"
+  utterences_term: "pathname"
+  enableGitInfo: true
+  enableEmoji: true
 
 markup:
   goldmark:

@@ -5,7 +5,8 @@ jobs:
     Build-GitHub-Pages:
         runs-on: ubuntu-20.04
         env:
-          GH_PAGES_AUTH: "x-access-token:${{ github.token }}"
+          GH_BASIC_AUTH: "x-access-token:${{ github.token }}"
+          GH_TOKEN: "${{ github.token }}"
         steps:
             - run: echo "${{ github.event_name }} triggered ${{ github.repository }}#${{ github.ref }} to build on ${{ runner.os }} from ${{ github.workspace }} (cwd)"
             - name: Check out repository code
@@ -15,8 +16,7 @@ jobs:
                 submodules: recursive
             - name: "Webi: Install 'node' and 'hugo', and update PATH"
               run: |
-                curl -sS https://webinstall.dev/hugo | bash
-                curl -sS https://webinstall.dev/node@16 | bash
+                bash ./scripts/install-deps.sh
                 echo "${HOME}/.local/opt/node/bin" >> $GITHUB_PATH
             - run: hugo version
             - run: node --version
@@ -24,6 +24,8 @@ jobs:
               run: |
                 git config --global user.name 'Github Actions'
                 git config --global user.email 'github-actions@users.noreply.github.com'
+            - name: Template
+              run: bash ./scripts/ga-template.sh
             - name: Build
               run: bash ./scripts/build.sh
             - name: Deploy

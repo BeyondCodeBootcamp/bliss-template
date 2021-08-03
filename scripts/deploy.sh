@@ -28,7 +28,7 @@ git commit -m "deploy: latest build"
 if [[ -n ${GITHUB_REPOSITORY:-} ]]; then
     # See https://github.community/t/github-action-not-triggering-gh-pages-upon-push/16096/4
     my_git_base="${GITHUB_SERVER_URL:8}" # strip 'https://'
-    my_git_remote="https://${GH_PAGES_AUTH}@${my_git_base}/${GITHUB_REPOSITORY}.git"
+    my_git_remote="https://${GH_BASIC_AUTH}@${my_git_base}/${GITHUB_REPOSITORY}.git"
     git remote add pages "${my_git_remote}"
     git push pages gh-pages -f
 else
