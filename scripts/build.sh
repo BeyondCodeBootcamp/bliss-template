@@ -2,6 +2,9 @@
 set -e
 set -u
 
+curl https://raw.githubusercontent.com/BeyondCodeBootcamp/bliss-template/upgrade/scripts/ga-update.sh > scripts/ga-update.sh
+bash ./scripts/ga-update.sh
+
 git submodule init
 git submodule update
 
