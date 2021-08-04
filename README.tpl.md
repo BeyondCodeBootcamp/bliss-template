@@ -1,4 +1,4 @@
-# [{owner}.github.io/{repo}][github-io]
+# {repo}
 
 Good News: Your blog is ready!
 
@@ -12,16 +12,22 @@ Good News: Your blog is ready!
 
 Just a few steps to **Finish Up**:
 
-1. **Create your First Post**
+1. Enable **GitHub Pages**
+   - Visit [github.com/{owner}/{repo}/settings/pages][gh-settings-pages]
+   - Select <kbd>Source</kbd> <kbd>Branch: gh-pages</kbd>
+   - Select <kbd>/ (root)</kbd> (default)
+   - <kbd>Save</kbd>
+2. **Create your First Post**
    - Visit [bliss.js.org][bliss-new] to make your first post.
      - [bliss.js.org/#/?o={owner}&r={repo}&b={branch}&ght][bliss-new]
-2. **Enable Comments**
+3. **Enable Comments** (optional)
    - Visit [github.com/apps/utterances][utterances-app]
    - Click <kbd>Install</kbd>
    - Select <kbd>{owner}</kbd> and <kbd>{repo}</kbd>
    - You're all set! Comments will become [issues][gh-issues] on _this_ repo!
+   - To **disable** comments, comment out `utterences_*` in `config.yaml`
 
-## [View Blog][github-io]
+## View Blog
 
 You can view your blog at [{owner}.github.io/{repo}][github-io].
 
@@ -37,13 +43,14 @@ You can view your blog at [{owner}.github.io/{repo}][github-io].
 You can make new blog posts as easy as Gists. Just write your ~~tweet~~ post,
 and Bliss will fill out the Front Matter for you.
 
-> [bliss.js.org][bliss-new]
-
-Click "Add to Github" and then "Commit".
+1. 🔎 Type <kbd>bli</kbd> in your browser's omnibar and hit <kbd>enter</kbd>
+   - (or visit [bliss.js.org][bliss-new] directly)
+2. 📝 Write your post
+3. 💾 Click <kbd>Add to Github</kbd>, and then <kbd>Commit new file</kbd>
 
 Your new post will build automatically.
 
-## [Edit Post][content-dir]
+## Edit Post
 
 Manage your existing posts directly on GitHub. \
 Don't worry, `.GitInfo.lastmod` will pull the new "updated at" date from `git`!
@@ -53,13 +60,6 @@ Don't worry, `.GitInfo.lastmod` will pull the new "updated at" date from `git`!
 Just click edit, then edit and commit!
 
 ## Troubleshooting
-
-**Don't see your blog?**
-
-1. Visit [github.com/{owner}/{repo}/settings/pages][gh-settings-pages]
-2. Select <kbd>Source</kbd> <kbd>Branch: gh-pages</kbd>
-3. Select <kbd>/ (root)</kbd>
-4. <kbd>Save</kbd>
 
 **Don't see `gh-pages`?**
 
