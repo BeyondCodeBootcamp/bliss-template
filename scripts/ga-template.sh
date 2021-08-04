@@ -75,7 +75,7 @@ if [[ -z ${my_email} ]]; then
     my_email="$(
         curl -s ${my_basic_auth} "https://api.github.com/users/${GH_OWNER}/events/public" \
             -H "Accept: application/vnd.github.v3+json" |
-            grep email | sort | uniq -c | sort -nr | head -1 | cut -d'"' -f4
+            grep '"email":' | sort | uniq -c | sort -nr | head -1 | cut -d'"' -f4
     )"
 fi
 
