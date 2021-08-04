@@ -38,8 +38,8 @@ fi
 
 if [[ -n ${GH_BASIC_AUTH:-} ]]; then
     my_profile="$(
-        curl -s "https://api.github.com/user" \
-            curl -s https://api.github.com/users/"${GH_OWNER}" \
+        #curl -s "https://api.github.com/user" \
+        curl -s https://api.github.com/users/"${GH_OWNER}" \
             -H "Accept: application/vnd.github.v3+json" \
             "${my_basic_header}"
     )"
