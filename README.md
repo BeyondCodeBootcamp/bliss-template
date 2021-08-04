@@ -12,15 +12,15 @@ Want a blog like this? In about... 30 seconds from now?
 
 ## Make it Yours
 
-1. Click the <kbd>Use this template</kbd> button
-2. Name your copy `blog` (or something else real nice and simple like)
+1. GitHub Templates: <kbd><a href="https://github.com/coolaj86/bliss-demo-template/generate">Use this template</a></kbd>
+2. Pick a name - probably `blog` (or something else real nice and simple like)
    - (it will deploy to `https://<owner>.github.io/<repo>`)
 3. **Wait 30 seconds**, and your blog will be ready.
    - See **next steps** in the new README.md!
 
 ## What's Next?
 
-A new `README.md` with additional instructions will appear in your new repo about **30s after** you click <kbd>Use this template</kbd>.
+A new `README.md` with additional instructions will appear in your new repo about **30s after** you click <kbd><a href="https://github.com/coolaj86/bliss-demo-template/generate">Use this template</a></kbd>.
 
 It will contain **direct links** into your GitHub Pages Settings to click a few buttons. No muss, no fuss (and no searching for the right page).
 
