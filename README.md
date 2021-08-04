@@ -21,6 +21,17 @@ Want a blog like this? In about... 30 seconds from now?
 3. **Wait 30 seconds**, and your blog will be ready.
    - See **next steps** in the new README.md!
 
+## Has it been 30 seconds?
+
+Are you seeing this default README after created a new repo from our template?
+
+**Refresh the page** ♻️.
+
+You can also check you <kbd>Actions</kbd> tab. If the automatic configuration
+failed
+[open an issue](https://github.com/BeyondCodeBootcamp/bliss-template/issues) and
+I'll see if I can help.
+
 ## What's Next?
 
 A new `README.md` with additional instructions will appear in your new repo
