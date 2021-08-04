@@ -8,8 +8,17 @@ Want a blog like this? In about... 30 seconds from now?
 
 [![eon][eon-screenshot]](https://ryanburnette.com)
 
+Sites using the eon theme:
+
 - [ryanburnette.com](https://ryanburnette.com)
 - [therootcompany.com](https://therootcompany.com)
+
+### Features
+
+- [x] 0 Configuration (`config.yaml` builds itself)
+- [x] Web interface (Bliss) and CLI tools (Hugo)
+- [x] Build at Home (localhost) or Abroad (GitHub Actions)
+- [x] Built-in Edit links
 
 ## Make it Yours
 

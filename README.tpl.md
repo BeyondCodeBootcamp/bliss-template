@@ -59,6 +59,46 @@ Don't worry, `.GitInfo.lastmod` will pull the new "updated at" date from `git`!
 
 Just click edit, then edit and commit!
 
+# Manual Builds
+
+It's always nice to know that when the 💩 hits the fan, you can still get 💩
+done all on your own.
+
+1. Edit `config.yaml` to taste... \
+   or `bash ./scripts/ga-template.sh`.
+2. Install `hugo` and `node` via Webi:
+   ```bash
+   curl -sS https://webinstall.dev/hugo@v0.86 | bash
+   curl -sS https://webinstall.dev/node@v16 | bash
+   # or
+   # bash ./scripts/install-deps.sh
+   ```
+3. Clone and setup repo
+   ```bash
+   git clone git@github.com:{owner}/{repo}
+   pushd ./{repo}
+   git submodule init
+   git submodule update
+   hugo
+   # or
+   # bash ./scripts/build.sh
+   ```
+4. Inspect the build
+   ```bash
+   ls ./public
+   ```
+5. Deploy to GitHub pages
+   ```bash
+   git checkout gh-pages
+   rsync -avhP public/ ./
+   rm -rf public/
+   git add ./
+   git commit -m "deploy: latest build"
+   git push
+   # or
+   # bash ./scripts/deploy.sh
+   ```
+
 ## Troubleshooting
 
 **Don't see `gh-pages`?**
