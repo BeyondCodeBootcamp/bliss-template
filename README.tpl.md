@@ -71,4 +71,4 @@ to complete.
 
 **Something else wrong?**
 
-Open an issue on <https://github.com/coolaj86/bliss-demo-template>.
+Open an issue on <https://github.com/BeyondCodeBootcamp/bliss-template>.
