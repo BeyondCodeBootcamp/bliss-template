@@ -9,6 +9,8 @@ jobs:
           GH_TOKEN: "${{ github.token }}"
         steps:
             - run: echo "${{ github.event_name }} triggered ${{ github.repository }}#${{ github.ref }} to build on ${{ runner.os }} from ${{ github.workspace }} (cwd)"
+            - name: Set Default Git Branch (to quiet warnings)
+              run: git config --global init.defaultBranch main
             - name: Check out repository code
               uses: actions/checkout@v2
               with:
