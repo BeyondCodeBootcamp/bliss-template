@@ -16,6 +16,7 @@ Sites using the eon theme:
 ### Features
 
 - [x] 0 Configuration (`config.yaml` builds itself)
+- [x] 0 Dependency on GitHub (just happens to work in push-button fashion here) 
 - [x] Web interface (Bliss) and CLI tools (Hugo)
 - [x] Build at Home (localhost) or Abroad (GitHub Actions)
 - [x] Built-in Edit links
