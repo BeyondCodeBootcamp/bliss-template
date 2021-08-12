@@ -10,7 +10,7 @@ Good News: Your blog is ready!
 [utterances-app]: https://github.com/apps/utterances
 [gh-issues]: https://github.com/{owner}/{repo}/issues
 
-Just a few steps to **Finish Up**:
+## Just a few steps to **Finish Up**:
 
 1. Enable **GitHub Pages**
    - Visit [github.com/{owner}/{repo}/settings/pages][gh-settings-pages]
@@ -45,7 +45,7 @@ You can view your blog at [{owner}.github.io/{repo}][github-io].
 You can make new blog posts as easy as Gists. Just write your ~~tweet~~ post,
 and Bliss will fill out the Front Matter for you.
 
-1. 🔎 Type <kbd>bli</kbd> in your browser's omnibar and hit <kbd>enter</kbd>
+1. 🔎 Type <kbd>bli</kbd> in your browser's omnibar and hit <kbd>enter</kbd> (assuming you followed the steps above).
    - (or visit [bliss.js.org][bliss-new] directly)
 2. 📝 Write your post
 3. 💾 Click <kbd>Add to Github</kbd>, and then <kbd>Commit new file</kbd>
