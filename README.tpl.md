@@ -38,7 +38,9 @@ You can view your blog at [{owner}.github.io/{repo}][github-io].
   https://{owner}.github.io/
 -->
 
-## [New Post][bliss-new]
+## New Post
+
+<kbd><a href="https://bliss.js.org/#/?o={owner}&r={repo}&b={branch}&ght">Create New Post</a></kbd>
 
 You can make new blog posts as easy as Gists. Just write your ~~tweet~~ post,
 and Bliss will fill out the Front Matter for you.
@@ -49,6 +51,8 @@ and Bliss will fill out the Front Matter for you.
 3. 💾 Click <kbd>Add to Github</kbd>, and then <kbd>Commit new file</kbd>
 
 Your new post will build automatically.
+
+Want to **Learn Markdown**? Check out [The Complete GitHub Markdown Cheat Sheet](https://github.com/BeyondCodeBootcamp/beyondcodebootcamp/blob/main/001-Markdown-Cheat-Sheet.md).
 
 ## Edit Post
 
