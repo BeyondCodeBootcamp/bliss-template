@@ -8,11 +8,6 @@ Want a blog like this? In about... 30 seconds from now?
 
 [![eon][eon-screenshot]](https://ryanburnette.com)
 
-Sites using the eon theme:
-
-- [ryanburnette.com](https://ryanburnette.com)
-- [therootcompany.com](https://therootcompany.com)
-
 ### Features
 
 - [x] 0 Configuration (`config.yaml` builds itself)
@@ -63,3 +58,8 @@ Basically, you'll do this:
     repo.
 
 Your site will be available at <kbd>https://{owner}.github.io/{repo}/</kbd>.
+
+## Other Sites using the eon theme:
+
+- [ryanburnette.com](https://ryanburnette.com)
+- [therootcompany.com](https://therootcompany.com)
