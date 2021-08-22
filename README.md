@@ -32,7 +32,7 @@ Are you seeing this default README after created a new repo from our template?
 
 **Refresh the page** ♻️.
 
-You can also check you <kbd>Actions</kbd> tab. If the automatic configuration
+You can also check your <kbd>Actions</kbd> tab. If the automatic configuration
 failed
 [open an issue](https://github.com/BeyondCodeBootcamp/bliss-template/issues) and
 I'll see if I can help.
