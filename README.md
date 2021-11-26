@@ -65,13 +65,13 @@ If you'd like to use a custom domain, such as `example.com`:
 
 1. Create a file `CNAME` in the root of the project \
    (the obvious, normal, top-level directory)
-3. Login to your DNS provider and
-  - EITHER set an `ANAME` (also called `ALIAS`)
+3. Login to your Domain / DNS provider (such as [name.com](https://name.com)) and replace any `example.com` records with 
+  - EITHER an `ANAME` (also called `ALIAS`) record
     - the `ANAME` record should point to
       ```txt
       <user-or-organization>.github.io
       ```
-  - OR set `A` and `AAAA` records
+  - OR `A` and `AAAA` records
     - `A` records should point to
       ```txt
       185.199.108.153
