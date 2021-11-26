@@ -59,6 +59,36 @@ Basically, you'll do this:
 
 Your site will be available at <kbd>https://{owner}.github.io/{repo}/</kbd>.
 
+### Custom Domains
+
+If you'd like to use a custom domain, such as `example.com`:
+
+1. Create a file `CNAME` in the root of the project \
+   (the obvious, normal, top-level directory)
+3. Login to your DNS provider and
+  - EITHER set an `ANAME` (also called `ALIAS`)
+    - the `ANAME` record should point to
+      ```txt
+      <user-or-organization>.github.io
+      ```
+  - OR set `A` and `AAAA` records
+    - `A` records should point to
+      ```txt
+      185.199.108.153
+      185.199.109.153
+      185.199.110.153
+      185.199.111.153
+      ```
+    - `AAAA` records should point to
+      ```txt
+      2606:50c0:8000::153
+      2606:50c0:8001::153
+      2606:50c0:8002::153
+      2606:50c0:8003::153
+      ```
+
+For more info, see <https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-a-subdomain>
+
 ## Other Sites using the eon theme:
 
 - [ryanburnette.com](https://ryanburnette.com)
