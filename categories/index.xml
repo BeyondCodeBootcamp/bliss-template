@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on &lt;name&gt;</title>
+    <link>https://&lt;owner&gt;.github.io/%3Crepo%3E/categories/</link>
+    <description>Recent content in Categories on &lt;name&gt;</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>&lt;email&gt; (&lt;name&gt;)</managingEditor>
+    <webMaster>&lt;email&gt; (&lt;name&gt;)</webMaster>
+    <copyright>© &lt;name&gt;</copyright>
+    <lastBuildDate>Fri, 02 May 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://<owner>.github.io/%3Crepo%3E/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web Development</title>
+      <link>https://&lt;owner&gt;.github.io/%3Crepo%3E/categories/web-development/</link>
+      <pubDate>Fri, 02 May 2014 00:00:00 +0000</pubDate>
+      <author>&lt;email&gt; (&lt;name&gt;)</author>
+      <guid>https://&lt;owner&gt;.github.io/%3Crepo%3E/categories/web-development/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
