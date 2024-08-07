@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 set -u
 set -e
 
@@ -18,16 +18,16 @@ else
 fi
 
 # Copy and commit freshly built site
-rsync -avhP public/ ./
-rm -rf public/
-rm -rf themes/
+cp -RPp ./public/* ./
+rm -rf ./public/
+rm -rf ./themes/
 git add ./
 git commit -m "deploy: latest build"
 
 # Push to GitHub Pages with default GITHUB_TOKEN
-if [[ -n ${GITHUB_REPOSITORY:-} ]]; then
+if test -n "${GITHUB_REPOSITORY:-}"; then
     # See https://github.community/t/github-action-not-triggering-gh-pages-upon-push/16096/4
-    my_git_base="${GITHUB_SERVER_URL:8}" # strip 'https://'
+    my_git_base="$(echo "${GITHUB_SERVER_URL}" | cut -c 9-)" # strip 'https://'
     my_git_remote="https://${GH_BASIC_AUTH}@${my_git_base}/${GITHUB_REPOSITORY}.git"
     git remote add pages "${my_git_remote}"
     git push pages gh-pages -f

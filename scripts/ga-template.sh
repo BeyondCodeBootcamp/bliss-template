@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 set -e
 set -u
 
@@ -32,7 +32,7 @@ GIT_REF="$(echo "${GITHUB_REF}" | cut -d'/' -f3-)"
 #my_type="user"
 my_profile=""
 my_basic_auth=""
-if [[ -n ${GH_TOKEN:-} ]]; then
+if test -n "${GH_TOKEN:-}"; then
     # this works assuming no spaces in username or token
     my_basic_auth="--user ${GH_OWNER}:${GH_TOKEN:-}"
 fi
@@ -41,7 +41,8 @@ fi
 #curl -s ${my_basic_auth} "https://api.github.com/user" \
 #    -H "Accept: application/vnd.github.v3+json"
 
-if [[ -n ${my_basic_auth} ]]; then
+if test -n "${my_basic_auth}"; then
+    # shellcheck disable=SC2086
     my_profile="$(
         curl -s ${my_basic_auth} https://api.github.com/users/"${GH_OWNER}" \
             -H "Accept: application/vnd.github.v3+json"
@@ -53,8 +54,9 @@ else
     )"
 fi
 
-if [[ -z ${my_profile} ]]; then
+if test -z "${my_profile}"; then
     #my_type="owner"
+    # shellcheck disable=SC2086
     my_profile="$(
         curl -s ${my_basic_auth} "https://api.github.com/orgs/${GH_OWNER}" \
             -H "Accept: application/vnd.github.v3+json"
@@ -63,19 +65,20 @@ fi
 
 my_name=""
 my_email=""
-if [[ -n ${my_profile} ]]; then
+if test -n "${my_profile}"; then
     my_name="$(echo "${my_profile}" | jq -r ".name")"
     my_email="$(echo "${my_profile}" | jq -r '.email')"
-    if [[ "null" == "${my_email}" ]]; then
+    if test "null" = "${my_email}"; then
         my_email=""
     fi
 fi
 
-if [[ -z ${my_email} ]]; then
+if test -z "${my_email}"; then
+    # shellcheck disable=SC2086
     my_email="$(
         curl -s ${my_basic_auth} "https://api.github.com/users/${GH_OWNER}/events/public" \
             -H "Accept: application/vnd.github.v3+json" |
-            grep '"email":' | sort | uniq -c | sort -nr | head -1 | cut -d'"' -f4
+            grep '"email":' | sort | uniq -c | sort -nr | head -1 | cut -d\" -f4
     )"
 fi
 
@@ -97,7 +100,7 @@ sd -s '{branch}' "${GIT_REF}" README.tpl.md
 sd -s '{name}' "${my_name}" README.tpl.md
 sd -s '{email}' "${my_email}" README.tpl.md
 
-if [[ -n ${my_basic_auth} ]]; then
+if test -n "${my_basic_auth}"; then
     git add config.yaml
 
     git add README.tpl.md

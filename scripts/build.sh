@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 set -e
 set -u
 
 # Auto-update script
-curl https://raw.githubusercontent.com/BeyondCodeBootcamp/bliss-template/upgrade/scripts/ga-update.sh > scripts/ga-update.sh
-bash ./scripts/ga-update.sh
+curl https://raw.githubusercontent.com/BeyondCodeBootcamp/bliss-template/upgrade/scripts/ga-update.sh > ./scripts/ga-update.sh
+sh ./scripts/ga-update.sh
 
 # Update submodules
 git submodule init
@@ -20,7 +20,8 @@ rm -rf ./bliss.tpl/
 rm -rf ./public/
 hugo
 git clone https://github.com/BeyondCodeBootcamp/Bliss.git --branch self-host ./bliss.tpl
-rsync -avhP bliss.tpl/{LICENSE,*.html,*.js,*.png} public/bliss/
+mkdir -p ./public/bliss/
+cp -RPp ./bliss.tpl/LICENSE ./bliss.tpl/*.html ./bliss.tpl/*.js ./bliss.tpl/*.png ./public/bliss/
 rm -rf ./bliss.tpl/
 
 npm ci

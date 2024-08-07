@@ -1,6 +1,6 @@
 #!/bin/sh
 
-curl -sS https://webinstall.dev/sd@v0.7 | sh
-curl -sS https://webinstall.dev/jq@v1.6 | sh
-curl -sS https://webinstall.dev/hugo@v0.131 | sh
-curl -sS https://webinstall.dev/node@v22 | sh
+curl -sS https://webi.sh/sd@v0.7 | sh
+curl -sS https://webi.sh/jq@v1.6 | sh
+curl -sS https://webi.sh/hugo@v0.131 | sh
+curl -sS https://webi.sh/node@v22 | sh
