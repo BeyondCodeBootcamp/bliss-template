@@ -16,8 +16,8 @@ Params:
   git_repo: "https://github.com/<owner>/<repo>"
   git_branch: "<branch>"
   git_host: "github"
-  utterences_repo: "<owner>/<repo>"
-  utterences_term: "pathname"
+  utterances_repo: "<owner>/<repo>"
+  utterances_term: "pathname"
   enableGitInfo: true
   enableEmoji: true
 

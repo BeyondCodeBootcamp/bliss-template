@@ -25,7 +25,7 @@ Good News: Your blog is ready!
    - Click <kbd>Install</kbd>
    - Select <kbd>{owner}</kbd> and <kbd>{repo}</kbd>
    - You're all set! Comments will become [issues][gh-issues] on _this_ repo!
-   - To **disable** comments, comment out `utterences_*` in `config.yaml`
+   - To **disable** comments, comment out `utterances_*` in `config.yaml`
 
 ## View Blog
 

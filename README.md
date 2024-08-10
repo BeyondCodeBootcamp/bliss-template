@@ -52,7 +52,7 @@ Basically, you'll do this:
 - [ ] Enable GitHub Pages for your default branch
   - <kbd>Settings</kbd> ➡️ <kbd>Pages</kbd> (left-hand side) ➡️ <kbd>Branch:
     gh-pages</kbd>
-- [ ] Enable GitHub Issues as comments via [utterences](https://utterenc.es)
+- [ ] Enable GitHub Issues as comments via [utterances](https://utterenc.es)
 - [ ] Create your first post using [bliss.js.org][bliss] as a front-end
   - The **New Post** link in the `README` will be pre-filled with your blog's
     repo.
