@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bliss - Blog as easily as creating a Gist</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css" />
+    <meta name="description" content="Bliss: Blog as easy as creating a Gist" />
+    <link rel="icon" href="./bliss-96px.png" />
+    <!--
+    <meta property="og:title" content="Unique page title - My Site">
+    <meta property="og:description" content="Page description">
+    <meta property="og:image" content="https://www.mywebsite.com/image.jpg">
+    <meta property="og:image:alt" content="Image description">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:url" content="https://www.mywebsite.com/page">
+    <link rel="canonical" href="https://www.mywebsite.com/page">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/my.webmanifest">
+    <meta name="theme-color" content="#FF00FF">
+    -->
+    <script src="https://unpkg.com/ajquery@2.1/ajquery.min.js"></script>
+    <script src="https://unpkg.com/xtz@1.0/xtz.min.js"></script>
+    <style>
+      nav {
+        margin-bottom: 0.8rem;
+      }
+      header {
+        padding-top: 0;
+        padding-bottom: 0.8rem;
+      }
+      main {
+        padding-top: 0;
+      }
+      fieldset {
+        border-style: none;
+      }
+      fieldset label {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="https://bliss.coolaj86.com/"
+          ><img alt="Bliss" src="./bliss-96px.png" height="48" />
+          <!-- I think this is the Blood Type emjoi?? -->
+          <!-- span style="font-size: 4em"> 🅱 </span -->
+        </a>
+        <h1>Bliss: Blog, Easy As Gist</h1>
+        <ul>
+          <li>Post</li>
+          <li>
+            <a href="https://github.com/coolaj86/bliss/" target="_blank">GitHub ↗</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <!-- TODO grid flex list thing??  -->
+        <table>
+          <thead>
+            <tr>
+              <th>Created</th>
+              <th>Title</th>
+              <th></th>
+              <th>Last Update</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody class="js-items">
+            <tr class="js-row">
+              <td style="text-align: left"><span hidden>{{created}}</span></td>
+              <td style="text-align: left">
+                <span hidden><h3>{{title}}</h3></span>
+                <input name="uuid" type="hidden" value="{{uuid}}" class="js-uuid" />
+              </td>
+              <td>
+                <button onclick="Post.deserialize(event);">Load Draft</button>
+              </td>
+              <td style="text-align: left"><span hidden>{{updated}}</span></td>
+              <td>
+                <a href="" onclick="Post.delete(event);"> 🗑 </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <br />
+      <section>
+        <form style="width: 100%">
+          <a onclick="Post.create(event);" style="float: right">New Post</a>
+          &nbsp; &nbsp;
+          <button onclick="Post.undelete(event)" class="js-undelete" style="float: right" hidden>Undelete</button>
+          <br />
+          <label
+            >Content:
+            <textarea
+              style="width: 90%"
+              name="content"
+              cols="28"
+              rows="22"
+              placeholder="# Magnificent Title
+Hello, World!
+1. Start your article title with '#' (as seen above) and write away!
+2. Select your Content System and Git Host.
+3. We'll handle the YAML (FrontMatter).
+You just focus on the Bliss of writing your content!
+"
+              onkeyup="Post.serialize(event)"
+            ></textarea>
+          </label>
+          <label
+            >Summary:
+            <textarea
+              style="width: 90%"
+              name="description"
+              cols="28"
+              rows="3"
+              placeholder="This will be used for Facebook, Twitter, and Google Search previews.
+Best kept 50 - 155 characters."
+              onkeyup="Post.patch(event)"
+            ></textarea>
+          </label>
+          <div style="text-align: right; margin-right: 3.28em; position: relative; top: -0.8rem"><span class="js-description-length" style="transition-property: color; transition-duration: 250ms">0</span>/155</div>
+          <!-- label
+            >Title:
+            <input
+              style="width: 90%"
+              type="text"
+              name="title"
+              size="28"
+              onkeyup="Post.serialize(event);"
+              placeholder="Post Title"
+            />
+          </label -->
+          <!-- label
+            >Created:
+            <input
+              type="datetime-local"
+              name="created"
+              onchange="Post.serialize(event)"
+            />
+          </label -->
+          <!-- about the blog system -->
+          <fieldset>
+            <label style="width: 65%"
+              >Repo:
+              <input type="url" name="repo" list="-repos" style="width: 80%" autocomplete="off" onchange="Blog.serialize(event)" placeholder="https://github.com/EXAMPLE/PROJECT" required />
+              <datalist id="-repos">
+                <option value="{{id}}"></option>
+              </datalist>
+            </label>
+            <label style="width: 25%; float: right; margin-right: 2.8em"
+              >Branch:
+              <input name="gitbranch" placeholder="ex: main, master, or gh-pages" autocomplete="on" list="-branches" value="main" onchange="Blog.serialize(event)" />
+              <datalist id="-branches">
+                <option value="main"></option>
+                <option value="master"></option>
+                <option value="gh-pages"></option>
+              </datalist>
+            </label>
+          </fieldset>
+          <fieldset>
+            <label
+              >Blog or Static Site System:
+              <select name="blog" onchange="Blog.serialize(event)">
+                <option value="bash">BashBlog</option>
+                <option value="desi">Desi</option>
+                <option value="eon" selected>Hugo (eon theme)</option>
+                <option value="zola">Zola</option>
+              </select>
+            </label>
+            <label
+              >Git Host:
+              <select name="githost" onchange="Blog.serialize(event)">
+                <option value="github" selected>GitHub</option>
+                <option value="gitea">Gitea v1.16+</option>
+                <option value="gitlab" disabled>GitLab (see gitlab#337038)</option>
+              </select>
+            </label>
+            <label style="float: right; margin-right: 2.8em"
+              ><a class="js-commit-url" target="_blank"
+                ><i>Create on <span class="js-githost"></span></i
+              ></a>
+            </label>
+          </fieldset>
+          <br />
+          <div style="max-width: 100%"></div>
+          <!-- TODO Save Version -->
+        </form>
+      </section>
+      <section class="js-preview-container" hidden>
+        <pre style="width: 100%">
+        <code language="text" class="js-filename" style="width: 50%">
+        </code>
+        <code language="markdown" class="js-preview">
+        </code>
+[Debug Info] Raw URL:
+        <code language="text" class="js-raw-url">
+        </code>
+        </pre>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>

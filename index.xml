@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>&lt;name&gt;</title>
+    <link>https://&lt;owner&gt;.github.io/%3Crepo%3E/</link>
+    <description>Recent content on &lt;name&gt;</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <managingEditor>&lt;email&gt; (&lt;name&gt;)</managingEditor>
+    <webMaster>&lt;email&gt; (&lt;name&gt;)</webMaster>
+    <copyright>© &lt;name&gt;</copyright>
+    <lastBuildDate>Fri, 02 May 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://<owner>.github.io/%3Crepo%3E/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello, World!</title>
+      <link>https://&lt;owner&gt;.github.io/%3Crepo%3E/blog/hello/</link>
+      <pubDate>Fri, 02 May 2014 00:00:00 +0000</pubDate><author>&lt;email&gt; (&lt;name&gt;)</author>
+      <guid>https://&lt;owner&gt;.github.io/%3Crepo%3E/blog/hello/</guid>
+      <description>My first post.</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://&lt;owner&gt;.github.io/%3Crepo%3E/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>&lt;email&gt; (&lt;name&gt;)</author>
+      <guid>https://&lt;owner&gt;.github.io/%3Crepo%3E/about/</guid>
+      <description>I&amp;rsquo;m the most interesting man in the universe.&#xA;I once made a mistake, just to see how it feels.</description>
+    </item>
+    <item>
+      <title>Contact</title>
+      <link>https://&lt;owner&gt;.github.io/%3Crepo%3E/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>&lt;email&gt; (&lt;name&gt;)</author>
+      <guid>https://&lt;owner&gt;.github.io/%3Crepo%3E/contact/</guid>
+      <description>john.doe@example.com +1 (555) 867-5309 123 Sesame St New York, NY 10001</description>
+    </item>
+  </channel>
+</rss>
