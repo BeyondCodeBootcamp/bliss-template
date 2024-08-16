@@ -14,7 +14,7 @@ if git show-ref --verify --quiet refs/heads/"${PAGES_BRANCH}"; then
 else
     git checkout --orphan "${PAGES_BRANCH}"
     rm .git/index
-    git clean -fdx --exclude=public
+    git clean -fdx --exclude=public --exclude=CNAME
 fi
 
 # Copy and commit freshly built site
